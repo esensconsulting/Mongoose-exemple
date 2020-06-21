@@ -1,0 +1,19 @@
+{
+  "name": "mongoose-exemple",
+  "version": "1.0.0",
+  "description": "Mongoose exemple ESENS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dracks977/Mongoose-exemple.git"
+  },
+  "author": "Dracks",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Dracks977/Mongoose-exemple/issues"
+  },
+  "homepage": "https://github.com/Dracks977/Mongoose-exemple#readme"
+}
