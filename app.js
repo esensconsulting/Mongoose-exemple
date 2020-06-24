@@ -6,7 +6,8 @@ const http = require('http').Server(app);
 const ejs = require('ejs');
 const path = require('path');
 const fs = require('fs');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const sanitizer = require('express-auto-sanitize')
 const url = 'mongodb://'+ process.env.DB_HOST +':'+ process.env.DB_PORT +'/' + process.env.DB_NAME;
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -58,6 +59,9 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 	extended: true
 })); 
+
+
+app.use(sanitizer({query: false,body: true,cookies: false,original: false,}));
 
 // middlewere de secu
 app.use(function (req, res, next) {
