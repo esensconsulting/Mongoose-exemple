@@ -17,6 +17,12 @@ module.exports = function(app, path, ejs, fs) {
 		})
 	})
 
+	app.get('/logout', function(req, res){
+		req.session.destroy();
+		res.redirect('/');
+	})
+	
+
 	app.post('/register', function(req, res){
 		db.register(req.body, (err, data) => {
 			if (err) return res.send(err);
