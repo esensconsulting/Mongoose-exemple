@@ -43,6 +43,9 @@
 									<div class="card-body">
 										<h5 class="card-title"><%= t.name %></h5>
 										<p class="card-text"><%= t.desc %></p>
+										<% t.users.forEach(function(u){ %>
+										<span class="badge badge-primary"><%= u.name %></span>
+										<% }); %>
 										<a class="delete" _id="<%= t._id %>"><i class="fa fa-trash-o"></i></a>
 									</div>
 								</div>
