@@ -61,7 +61,7 @@ app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
 })); 
 
 
-app.use(sanitizer({query: false,body: true,cookies: false,original: false,}));
+//app.use(sanitizer({query: false,body: true,cookies: false,original: false,})); // crée un bug
 
 // middlewere de secu
 app.use(function (req, res, next) {
