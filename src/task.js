@@ -18,4 +18,11 @@ module.exports = function(app, path, ejs, fs) {
 			res.redirect("/task");
 		})
 	})
+
+	app.post('/task/delete', function(req, res) {
+		db.delete(req.body._id, req.session.userinfo._id, (err, data) => {
+			if (err) return res.sendStatus(500);
+			res.sendStatus(200);
+		})
+	})
 }

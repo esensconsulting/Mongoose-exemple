@@ -14,5 +14,11 @@ module.exports = {
 		MODELS.Task.find({ users: id}).populate('users', ['name', '_id']).exec((err,data) => {
 			callback(err, data);
 		})
+	},
+	delete: (_id, userId, callback) => {
+		MODELS.Task.deleteOne({ _id: _id, users: userId }, function (err) {
+			if (err) return callback(err, null)
+			return callback(err, null)
+		});
 	}
 }
